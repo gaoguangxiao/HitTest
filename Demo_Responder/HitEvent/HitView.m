@@ -17,27 +17,31 @@
     // Drawing code
 }
 */
+
+//命中测试找第一响应者
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
     //先判断触摸点是否在本视图
+    NSLog(@"响应者视图：%ld",self.tag);
     if ([self pointInside:point withEvent:event]) {
-        
-        //查找子视图
+        return self;
+    }else{
+        //查找
         for (UIView *s in self.subviews) {
             //将触摸点
             CGPoint pointView = [s convertPoint:point fromView:self];//将自身坐标系转换到子视图中去
-            NSLog(@"响应者子视图：%ld",s.tag);
+            NSLog(@"响应者子视图tag：%ld,子视图颜色：%@",s.tag,s.backgroundColor);
             //            UIView *p = [s hitTest:pointView withEvent:event];
             if ([s hitTest:pointView withEvent:event]) {
                 return s;
             }
         }
-        NSLog(@"响应者视图：%ld",self.tag);
-        
-        return self;
-    }else{
         return nil;
     }
 }
 
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
+    BOOL isPoint = [super pointInside:point withEvent:event];
+    return isPoint;
+}
 
 @end

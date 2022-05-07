@@ -27,7 +27,7 @@
         for (UIView *s in self.subviews) {
             //将触摸点
             CGPoint pointView = [s convertPoint:point fromView:self];//将自身坐标系转换到子视图中去
-            NSLog(@"响应者子视图：%ld",s.tag);
+            NSLog(@"响应者子视图tag：%ld,子视图颜色：%@",s.tag,s.backgroundColor);
 //            UIView *p = [s hitTest:pointView withEvent:event];
             if ([s hitTest:pointView withEvent:event]) {
                 return s;

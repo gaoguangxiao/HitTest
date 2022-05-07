@@ -22,11 +22,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap1:)];
-    [self.redView addGestureRecognizer:tap1];
-    
-    UITapGestureRecognizer *tap2 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap2:)];
-    [self.blueView addGestureRecognizer:tap2];
+//    UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap1:)];
+//    [self.redView addGestureRecognizer:tap1];
+//    
+//    UITapGestureRecognizer *tap2 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap2:)];
+//    [self.blueView addGestureRecognizer:tap2];
     
 }
 -(void)tap1:(UITapGestureRecognizer *)sender{
